@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <title>Busqueda del Tesoro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="hero">
+            <h1>Búsqueda del Tesoro<br>Ciudad Universitaria -> Centro</h1>
+            <p>Cada misión se desbloquea al completar la anterior.</p>
+        </section>
+
+        <section class="panel" id="introScreen">
+            <h2>¡Bienvenidos a la búsqueda del tesoro!</h2>
+            <p>En este encuentro recorrerán puntos clave de la ciudad siguiendo las pistas de cada misión. Al llegar a cada lugar, deberán contestar una pregunta y subir una foto del equipo siguiendo las indicaciones para poder avanzar a la siguiente pista. Además, se les mostrará una pista extra que deberán guardar (anotándola o en una captura) porque con ellas tendrán que responder una pregunta al final del cuestionario.</p>
+            <p>¡Buena suerte!</p>
+            <button id="understoodButton" type="button">Entendimos</button>
+        </section>
+
+        <section class="panel hidden" id="loginScreen">
+            <label for="teamCodeInput">Código de equipo</label>
+            <input type="text" id="teamCodeInput" placeholder="Ej: PUMA1" autocomplete="off" autocapitalize="characters">
+            <button id="startButton" type="button">Comenzar</button>
+            <p id="statusMessage" aria-live="polite"></p>
+        </section>
+
+        <section class="panel hidden" id="gameScreen">
+            <div id="teamHeader"></div>
+
+            <div class="progress-strip" aria-hidden="true">
+                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-meta" id="progressMeta">0 / 0 misiones</div>
+            </div>
+
+            <div id="missionsList"></div>
+        </section>
+
+        <section class="panel hidden" id="finalEncounterScreen">
+            <h2>¡Gracias por participar!</h2>
+            <p id="finalEncounterMessage"></p>
+        </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

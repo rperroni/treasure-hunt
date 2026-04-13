@@ -1,0 +1,1062 @@
+{
+  "PUMA1": {
+    "displayName": "Equipo Puma 1",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 6 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el puma. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es un felino de América",
+            "Es un pez de río",
+            "Es un ave marina",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Empieza con F",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Termina con T",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Es una bebida",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Muy popular en Córdoba",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Se mezcla con coca",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "CONDOR2": {
+    "displayName": "Equipo Cóndor 2",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 9 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el cóndor. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es una de las aves voladoras más grandes del mundo",
+            "Es un reptil marino",
+            "Es un roedor",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Empieza con C",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Es transporte",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Se usa en la ciudad",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Tiene paradas",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "No es taxi",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "HORNERO3": {
+    "displayName": "Equipo Hornero 3",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 8 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el hornero. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es el ave nacional de Argentina",
+            "Es un mamífero marino",
+            "Es un felino",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Empieza con E",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Es comida",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Puede ser salada",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Se come con la mano",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Típica en Argentina",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "YAGUARETE4": {
+    "displayName": "Equipo Yaguareté 4",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 6 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el yaguareté. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es uno de los felinos más grandes de América y está en peligro",
+            "Es un ave marina",
+            "Es un anfibio de laguna",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Ya estuvieron en uno hoy",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Tiene árboles",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "La gente descansa",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Es grande y antigua",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Ya estuvieron en uno hoy",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "GUANACO5": {
+    "displayName": "Equipo Guanaco 5",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 8 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el guanaco. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es un camélido sudamericano",
+            "Es un ave marina",
+            "Es un anfibio",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Empieza con C",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Es religioso",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Está en el centro",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Es un edificio",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Es grande y antigua",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "CARPINCHO6": {
+    "displayName": "Equipo Carpincho 6",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 6 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el carpincho. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es el roedor más grande del mundo",
+            "Es un felino",
+            "Es un ave de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Se come frío",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Tiene sabores",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Se come después de salir",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Es una bebida",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Se mezcla con coca",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "FLAMENCO7": {
+    "displayName": "Equipo Flamenco 7",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 6 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el flamenco. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es un ave zancuda de color rosado",
+            "Es un mamífero terrestre",
+            "Es un pez",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Sirve para cruzar",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Está sobre agua",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Ya estuvieron en uno",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Puede ser de piedra",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Puede ser de piedra",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "TATU8": {
+    "displayName": "Equipo Tatú 8",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 5 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el tatú. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es un armadillo nativo de Sudamérica",
+            "Es un ave marina",
+            "Es un reptil acuático",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Empieza con P",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Es espacio público",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Tiene bancos",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Tiene árboles",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Está en el centro",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "PINGUINO9": {
+    "displayName": "Equipo Pingüino 9",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 5 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es el pingüino. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es un ave que no vuela",
+            "Es un felino",
+            "Es un roedor",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Hay exposiciones",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "La hacen en el juego",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Se usa el celular",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "Sirve como evidencia",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Se sube al formulario",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  },
+  "VICUNA10": {
+    "displayName": "Equipo Vicuña 10",
+    "finalPuzzle": {
+      "prompt": "Ya completaron las 6 misiones. Ingresen la respuesta final del puzzle armado con las pistas extra."
+    },
+    "finalEncounterMessage": "Punto de encuentro final: Plaza San Martín.",
+    "missions": [
+      {
+        "id": "M1",
+        "title": "Misión 1 - Encuentra tu aula",
+        "formType": "initial",
+        "clue": "En esta misión inicial les fue proporcionada una pista. Si la pudieron resolver correctamente, entonces encontraron el código QR para ingresar a este formulario (¡qué bien!). A continuación ingresen los datos del equipo y suban una selfie grupal donde se vea el número de aula para poder desbloquear la siguiente pista.",
+        "puzzleHint": "Tiene 10 letras",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "El animal de su código es la vicuña. ¿Cuál afirmación es correcta?",
+          "options": [
+            "Es un camélido andino protegido",
+            "Es un pez de agua dulce",
+            "Es un ave nocturna",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M2",
+        "title": "Misión 2 - El gran parque",
+        "clue": "A pocos minutos de la universidad hay uno de los parques más grandes de la ciudad.",
+        "puzzleHint": "Empieza con F",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Cuál de estas opciones describe mejor el Parque Sarmiento?",
+          "options": [
+            "Un espacio verde urbano grande con sectores recreativos",
+            "Una terminal de transporte",
+            "Un museo cerrado",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M3",
+        "title": "Misión 3 - Un edificio con otra historia",
+        "clue": "Este edificio tuvo originalmente otro uso y hoy funciona como un espacio cultural.",
+        "puzzleHint": "Sirve como evidencia",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Hoy el Buen Pastor funciona principalmente como:",
+          "options": [
+            "Espacio cultural",
+            "Aeropuerto",
+            "Hospital",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M4",
+        "title": "Misión 4 - El canal de piedra",
+        "clue": "No es un río natural, pero atraviesa la ciudad con paredes de piedra y puentes.",
+        "puzzleHint": "Se sube al formulario",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿La Cañada es conocida por:",
+          "options": [
+            "Su canal de piedra y puentes",
+            "Ser una playa marítima",
+            "Ser una pista de esquí",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M5",
+        "title": "Misión 5 - El corazón del centro",
+        "clue": "Esta plaza histórica lleva el nombre de uno de los próceres más importantes de Argentina.",
+        "puzzleHint": "La hacen en el juego",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "¿Plaza San Martín se ubica en:",
+          "options": [
+            "El centro histórico de Córdoba",
+            "La periferia rural",
+            "Una zona de montaña",
+            "Ninguna de las anteriores"
+          ]
+        }
+      },
+      {
+        "id": "M6",
+        "title": "Misión 6 - Historia universitaria",
+        "clue": "A pocos metros de la plaza se encuentra un conjunto histórico vinculado al origen de la universidad.",
+        "puzzleHint": "Se usa el celular",
+        "trivia": {
+          "type": "multiple-choice",
+          "question": "La Manzana Jesuítica está vinculada con:",
+          "options": [
+            "La historia educativa y religiosa de la ciudad",
+            "La industria automotriz",
+            "La actividad portuaria",
+            "Ninguna de las anteriores"
+          ]
+        }
+      }
+    ]
+  }
+}

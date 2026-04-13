@@ -1,0 +1,354 @@
+:root {
+  --bg: #fff8ee;
+  --ink: #1f1b16;
+  --primary: #0d6f63;
+  --primary-strong: #074f46;
+  --accent: #ec6f2d;
+  --muted: #6e665c;
+  --card: #fffdf8;
+  --locked: #ece8de;
+  --done: #d9f6ea;
+  --danger: #b42318;
+  --radius: 18px;
+  --shadow: 0 12px 24px rgba(31, 27, 22, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 100% 0%, #ffd8b9 0%, rgba(255, 216, 185, 0) 40%),
+    radial-gradient(circle at 0% 100%, #b9efe6 0%, rgba(185, 239, 230, 0) 45%),
+    var(--bg);
+  color: var(--ink);
+}
+
+.app-shell {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: 18px 14px 26px;
+}
+
+.hero {
+  background: linear-gradient(145deg, #0d6f63 0%, #0b4f47 100%);
+  color: #f8fffc;
+  border-radius: 24px;
+  padding: 20px 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: rgba(236, 111, 45, 0.18);
+  border-radius: 50%;
+  right: -50px;
+  top: -50px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  margin: 10px 0 0;
+  color: rgba(248, 255, 252, 0.9);
+  line-height: 1.45;
+}
+
+.panel {
+  margin-top: 14px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  border: 1px solid #efe6da;
+}
+
+label {
+  font-size: 0.86rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 8px;
+}
+
+fieldset {
+  border: 1px solid #d6cfc4;
+  border-radius: 12px;
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff;
+}
+
+legend {
+  font-size: 0.86rem;
+  color: var(--muted);
+  padding: 0 6px;
+}
+
+fieldset label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+input[type="radio"] {
+  margin-top: 2px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  width: 100%;
+  border: 1px solid #d6cfc4;
+  border-radius: 12px;
+  padding: 12px;
+  font: inherit;
+  background: #fff;
+}
+
+textarea {
+  min-height: 74px;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button.secondary {
+  background: #fff;
+  color: var(--primary-strong);
+  border: 1px solid #bfd9d4;
+}
+
+.members-container {
+  display: grid;
+  gap: 6px;
+}
+
+.member-row {
+  display: grid;
+}
+
+.member-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.add-member-button {
+  margin-top: 8px;
+}
+
+.remove-member-button {
+  margin-top: 8px;
+}
+
+#statusMessage {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--primary-strong);
+}
+
+#statusMessage.error {
+  color: var(--danger);
+}
+
+.hidden {
+  display: none;
+}
+
+.progress-strip {
+  margin: 14px 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8dcc9;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 10px;
+  background: linear-gradient(90deg, var(--accent), #f6ad62);
+  width: 0;
+  transition: width 0.35s ease;
+}
+
+.progress-meta {
+  padding: 9px 12px 12px;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+#missionsList {
+  display: grid;
+  gap: 12px;
+}
+
+.mission-card {
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid #e8dcc9;
+  background: var(--card);
+  box-shadow: 0 8px 20px rgba(31, 27, 22, 0.06);
+  animation: rise 0.35s ease;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mission-card.locked {
+  background: var(--locked);
+  opacity: 0.75;
+}
+
+.mission-card.done {
+  background: var(--done);
+  border-color: #97d9be;
+}
+
+.mission-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.mission-top h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.tag {
+  font-size: 0.74rem;
+  background: #f3ece0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #5c5145;
+}
+
+.mission-card.done .tag {
+  background: #83caa8;
+  color: #14452f;
+}
+
+.mission-card p {
+  margin: 7px 0;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.extra-clue {
+  background: #fff3dc;
+  border: 1px dashed #e2c089;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.mission-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.preview {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid #dbcab8;
+}
+
+.summary {
+  margin-top: 16px;
+  border-radius: 16px;
+  background: #1f1b16;
+  color: #f7f2ec;
+  padding: 14px;
+}
+
+.mission-nav button,
+.member-actions button {
+  margin-top: 0;
+}
+
+#finalEncounterMessage {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (min-width: 720px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .app-shell {
+    padding-top: 24px;
+  }
+}
