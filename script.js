@@ -120,6 +120,14 @@ function startGame() {
     gameScreen.classList.remove("hidden");
     finalEncounterScreen.classList.add("hidden");
     renderGame();
+
+    void (async () => {
+        try {
+            await ensureTeamDocSynced();
+        } catch (error) {
+            console.warn("No se pudo crear/actualizar el documento del equipo en Firestore.", error);
+        }
+    })();
 }
 
 function buildMissionSet(teamData) {
@@ -149,8 +157,9 @@ function saveProgress() {
 }
 
 async function syncMissionToCloud(mission, payload, photoBlob) {
-    const teamDocRef = doc(firestore, "teams", state.teamCode);
     const missionDocRef = doc(firestore, "teams", state.teamCode, "missions", mission.id);
+
+    await ensureTeamDocSynced();
 
     await setDoc(missionDocRef, {
         missionId: mission.id,
@@ -178,13 +187,6 @@ async function syncMissionToCloud(mission, payload, photoBlob) {
         throw photoError;
     }
 
-    await setDoc(teamDocRef, {
-        teamCode: state.teamCode,
-        displayName: state.dataset[state.teamCode].displayName,
-        teamProfile: state.progress.teamProfile || null,
-        lastMissionCompleted: mission.id,
-        updatedAt: serverTimestamp()
-    }, { merge: true });
 
     await setDoc(missionDocRef, {
         missionId: mission.id,
@@ -238,6 +240,19 @@ async function syncFinalPuzzleToCloud(answer) {
     }, { merge: true });
 }
 
+async function ensureTeamDocSynced() {
+    if (!state.teamCode) {
+        return;
+    }
+
+    const teamDocRef = doc(firestore, "teams", state.teamCode);
+    await setDoc(teamDocRef, {
+        teamCode: state.teamCode,
+        displayName: state.dataset[state.teamCode].displayName,
+        teamProfile: state.progress?.teamProfile || null,
+        updatedAt: serverTimestamp()
+    }, { merge: true });
+}
 function progressKey(teamCode) {
     return `progress:${teamCode}`;
 }
@@ -589,7 +604,7 @@ function renderTriviaOptions(mission) {
 
     const optionsHtml = options
         .map((option, index) => {
-            const optionValue = `option-${index + 1}`;
+            const optionValue = String.fromCharCode(65 + index);
             return `
                 <label>
                     <input type="radio" name="trivia-${mission.id}" value="${optionValue}" data-label="${escapeHtmlAttribute(option)}" required>
