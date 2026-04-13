@@ -1,3 +1,7 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-storage.js";
+
 const DATA_URL = "./missions.json";
 const DB_NAME = "treasure-hunt-local-db";
 const DB_VERSION = 1;
@@ -7,7 +11,6 @@ const MAX_TEAM_MEMBERS = 6;
 const APP_TITLE = "Búsqueda del Tesoro - De Ciudad Universitaria al Centro";
 const DEFAULT_FINAL_ENCOUNTER_MESSAGE = "Punto de encuentro final: Plaza San Martín.";
 
-// Preparado para activar Firebase más adelante.
 const FIREBASE_CONFIG = {
     apiKey: "AIzaSyDdYdEd2-PgU9lCyFy4Sm5BKBW912182Zs",
     authDomain: "treasure-hunt-6addd.firebaseapp.com",
@@ -18,13 +21,18 @@ const FIREBASE_CONFIG = {
     measurementId: "G-ZDRW8125R6"
 };
 
+const firebaseApp = initializeApp(FIREBASE_CONFIG);
+const firestore = getFirestore(firebaseApp);
+const storage = getStorage(firebaseApp);
+
 const state = {
     dataset: null,
     teamCode: null,
     missions: [],
     progress: null,
     viewMissionIndex: 0,
-    photoPreviewUrls: new Set()
+    photoPreviewUrls: new Set(),
+    cloudSyncStatus: "ready"
 };
 
 const introScreen = document.getElementById("introScreen");
@@ -138,6 +146,48 @@ function saveProgress() {
     }
 
     persistence.saveProgress(state.teamCode, state.progress);
+}
+
+async function syncMissionToCloud(mission, payload, photoFile) {
+    const teamDocRef = doc(firestore, "teams", state.teamCode);
+    const missionDocRef = doc(firestore, "teams", state.teamCode, "missions", mission.id);
+    const photoPath = `${state.teamCode}/missions/${mission.id}/photo-${Date.now()}.jpg`;
+    const photoRef = ref(storage, photoPath);
+    const uploadResult = await uploadBytes(photoRef, photoFile);
+    const photoUrl = await getDownloadURL(uploadResult.ref);
+
+    await setDoc(teamDocRef, {
+        teamCode: state.teamCode,
+        displayName: state.dataset[state.teamCode].displayName,
+        teamProfile: state.progress.teamProfile || null,
+        lastMissionCompleted: mission.id,
+        updatedAt: serverTimestamp()
+    }, { merge: true });
+
+    await setDoc(missionDocRef, {
+        missionId: mission.id,
+        order: mission.order,
+        title: mission.title,
+        triviaAnswer: payload.triviaAnswer,
+        triviaAnswerLabel: payload.triviaAnswerLabel,
+        teamProfile: payload.teamProfile || null,
+        photoUrl,
+        photoPath,
+        completedAt: serverTimestamp()
+    }, { merge: true });
+}
+
+async function syncFinalPuzzleToCloud(answer) {
+    const teamDocRef = doc(firestore, "teams", state.teamCode);
+
+    await setDoc(teamDocRef, {
+        teamCode: state.teamCode,
+        displayName: state.dataset[state.teamCode].displayName,
+        teamProfile: state.progress.teamProfile || null,
+        finalPuzzleAnswer: answer,
+        finalPuzzleSubmittedAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+    }, { merge: true });
 }
 
 function progressKey(teamCode) {
@@ -342,6 +392,20 @@ async function createMissionCard(mission, completedCount) {
             };
 
             saveProgress();
+
+            try {
+                state.cloudSyncStatus = "syncing";
+                await syncMissionToCloud(mission, {
+                    triviaAnswer,
+                    triviaAnswerLabel,
+                    teamProfile
+                }, photoFile);
+                state.cloudSyncStatus = "synced";
+            } catch (cloudError) {
+                state.cloudSyncStatus = "local-only";
+                console.warn("No se pudo sincronizar la misión con Firebase.", cloudError);
+            }
+
             state.viewMissionIndex = Math.min(mission.index + 1, state.missions.length - 1);
             await renderGame();
 
@@ -525,7 +589,7 @@ function renderFinalPuzzleCard() {
         <button type="submit">Enviar</button>
     `;
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
         event.preventDefault();
         const answerInput = form.querySelector("#final-puzzle-answer");
         const answer = answerInput.value.trim();
@@ -538,6 +602,16 @@ function renderFinalPuzzleCard() {
         state.progress.finalPuzzleAnswer = answer;
         state.progress.finalPuzzleSubmittedAt = new Date().toISOString();
         saveProgress();
+
+        try {
+            state.cloudSyncStatus = "syncing";
+            await syncFinalPuzzleToCloud(answer);
+            state.cloudSyncStatus = "synced";
+        } catch (cloudError) {
+            state.cloudSyncStatus = "local-only";
+            console.warn("No se pudo sincronizar el puzzle final con Firebase.", cloudError);
+        }
+
         renderGame();
     });
 
