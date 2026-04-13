@@ -392,20 +392,6 @@ async function createMissionCard(mission, completedCount) {
             };
 
             saveProgress();
-
-            try {
-                state.cloudSyncStatus = "syncing";
-                await syncMissionToCloud(mission, {
-                    triviaAnswer,
-                    triviaAnswerLabel,
-                    teamProfile
-                }, photoFile);
-                state.cloudSyncStatus = "synced";
-            } catch (cloudError) {
-                state.cloudSyncStatus = "local-only";
-                console.warn("No se pudo sincronizar la misión con Firebase.", cloudError);
-            }
-
             state.viewMissionIndex = Math.min(mission.index + 1, state.missions.length - 1);
             await renderGame();
 
@@ -413,6 +399,21 @@ async function createMissionCard(mission, completedCount) {
             if (nextMission) {
                 scrollToMission(nextMission.id);
             }
+
+            void (async () => {
+                try {
+                    state.cloudSyncStatus = "syncing";
+                    await syncMissionToCloud(mission, {
+                        triviaAnswer,
+                        triviaAnswerLabel,
+                        teamProfile
+                    }, photoFile);
+                    state.cloudSyncStatus = "synced";
+                } catch (cloudError) {
+                    state.cloudSyncStatus = "local-only";
+                    console.warn("No se pudo sincronizar la misión con Firebase.", cloudError);
+                }
+            })();
         } catch (error) {
             window.alert(error.message || "No se pudo guardar la misión localmente.");
             submitButton.disabled = false;
@@ -603,16 +604,18 @@ function renderFinalPuzzleCard() {
         state.progress.finalPuzzleSubmittedAt = new Date().toISOString();
         saveProgress();
 
-        try {
-            state.cloudSyncStatus = "syncing";
-            await syncFinalPuzzleToCloud(answer);
-            state.cloudSyncStatus = "synced";
-        } catch (cloudError) {
-            state.cloudSyncStatus = "local-only";
-            console.warn("No se pudo sincronizar el puzzle final con Firebase.", cloudError);
-        }
-
         renderGame();
+
+        void (async () => {
+            try {
+                state.cloudSyncStatus = "syncing";
+                await syncFinalPuzzleToCloud(answer);
+                state.cloudSyncStatus = "synced";
+            } catch (cloudError) {
+                state.cloudSyncStatus = "local-only";
+                console.warn("No se pudo sincronizar el puzzle final con Firebase.", cloudError);
+            }
+        })();
     });
 
     card.appendChild(form);
