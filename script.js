@@ -148,13 +148,35 @@ function saveProgress() {
     persistence.saveProgress(state.teamCode, state.progress);
 }
 
-async function syncMissionToCloud(mission, payload, photoFile) {
+async function syncMissionToCloud(mission, payload, photoBlob) {
     const teamDocRef = doc(firestore, "teams", state.teamCode);
     const missionDocRef = doc(firestore, "teams", state.teamCode, "missions", mission.id);
+
+    await setDoc(missionDocRef, {
+        missionId: mission.id,
+        order: mission.order,
+        title: mission.title,
+        triviaAnswer: payload.triviaAnswer,
+        triviaAnswerLabel: payload.triviaAnswerLabel,
+        teamProfile: payload.teamProfile || null,
+        photoUploadStatus: "pending",
+        completedAt: serverTimestamp()
+    }, { merge: true });
+
     const photoPath = `${state.teamCode}/missions/${mission.id}/photo-${Date.now()}.jpg`;
     const photoRef = ref(storage, photoPath);
-    const uploadResult = await uploadBytes(photoRef, photoFile);
-    const photoUrl = await getDownloadURL(uploadResult.ref);
+    let photoUrl = null;
+
+    try {
+        const uploadResult = await uploadBytes(photoRef, photoBlob);
+        photoUrl = await getDownloadURL(uploadResult.ref);
+    } catch (photoError) {
+        await setDoc(missionDocRef, {
+            photoUploadStatus: "failed",
+            photoUploadError: String(photoError?.message || photoError || "unknown_error")
+        }, { merge: true });
+        throw photoError;
+    }
 
     await setDoc(teamDocRef, {
         teamCode: state.teamCode,
@@ -173,8 +195,34 @@ async function syncMissionToCloud(mission, payload, photoFile) {
         teamProfile: payload.teamProfile || null,
         photoUrl,
         photoPath,
+        photoUploadStatus: "uploaded",
         completedAt: serverTimestamp()
     }, { merge: true });
+}
+
+async function syncCompletedMissionsFromLocal() {
+    const completedEntries = Object.entries(state.progress.completedMissions || {});
+    for (const [missionId, savedMission] of completedEntries) {
+        const mission = state.missions.find((item) => item.id === missionId);
+        if (!mission || !savedMission?.photoKey) {
+            continue;
+        }
+
+        try {
+            const photoBlob = await getPhoto(savedMission.photoKey);
+            if (!photoBlob) {
+                continue;
+            }
+
+            await syncMissionToCloud(mission, {
+                triviaAnswer: savedMission.triviaAnswer || "",
+                triviaAnswerLabel: savedMission.triviaAnswerLabel || "",
+                teamProfile: savedMission.teamProfile || state.progress.teamProfile || null
+            }, photoBlob);
+        } catch (error) {
+            console.warn(`No se pudo reintentar la sincronización de ${missionId}.`, error);
+        }
+    }
 }
 
 async function syncFinalPuzzleToCloud(answer) {
@@ -609,6 +657,7 @@ function renderFinalPuzzleCard() {
         void (async () => {
             try {
                 state.cloudSyncStatus = "syncing";
+                await syncCompletedMissionsFromLocal();
                 await syncFinalPuzzleToCloud(answer);
                 state.cloudSyncStatus = "synced";
             } catch (cloudError) {
