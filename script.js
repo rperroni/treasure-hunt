@@ -24,6 +24,7 @@ const FIREBASE_CONFIG = {
 const firebaseApp = initializeApp(FIREBASE_CONFIG);
 const firestore = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
+const storageFallback = getStorage(firebaseApp, `gs://${FIREBASE_CONFIG.projectId}.appspot.com`);
 
 const state = {
     dataset: null,
@@ -173,16 +174,17 @@ async function syncMissionToCloud(mission, payload, photoBlob) {
     }, { merge: true });
 
     const photoPath = `${state.teamCode}/missions/${mission.id}/photo-${Date.now()}.jpg`;
-    const photoRef = ref(storage, photoPath);
     let photoUrl = null;
+    let finalPhotoPath = photoPath;
 
     try {
-        const uploadResult = await uploadBytes(photoRef, photoBlob);
-        photoUrl = await getDownloadURL(uploadResult.ref);
+        const uploaded = await uploadPhotoWithFallback(photoPath, photoBlob);
+        photoUrl = uploaded.photoUrl;
+        finalPhotoPath = uploaded.photoPath;
     } catch (photoError) {
         await setDoc(missionDocRef, {
             photoUploadStatus: "failed",
-            photoUploadError: String(photoError?.message || photoError || "unknown_error")
+            photoUploadError: stringifyFirebaseError(photoError)
         }, { merge: true });
         throw photoError;
     }
@@ -196,10 +198,36 @@ async function syncMissionToCloud(mission, payload, photoBlob) {
         triviaAnswerLabel: payload.triviaAnswerLabel,
         teamProfile: payload.teamProfile || null,
         photoUrl,
-        photoPath,
+        photoPath: finalPhotoPath,
         photoUploadStatus: "uploaded",
         completedAt: serverTimestamp()
     }, { merge: true });
+}
+
+async function uploadPhotoWithFallback(photoPath, photoBlob) {
+    const primaryRef = ref(storage, photoPath);
+
+    try {
+        const uploadResult = await uploadBytes(primaryRef, photoBlob);
+        const photoUrl = await getDownloadURL(uploadResult.ref);
+        return { photoUrl, photoPath };
+    } catch (primaryError) {
+        const canRetryFallback = String(primaryError?.code || "") === "storage/retry-limit-exceeded";
+        if (!canRetryFallback) {
+            throw primaryError;
+        }
+
+        const fallbackRef = ref(storageFallback, photoPath);
+        const fallbackUpload = await uploadBytes(fallbackRef, photoBlob);
+        const fallbackUrl = await getDownloadURL(fallbackUpload.ref);
+        return { photoUrl: fallbackUrl, photoPath: `fallback:${photoPath}` };
+    }
+}
+
+function stringifyFirebaseError(error) {
+    const code = error?.code ? `[${error.code}] ` : "";
+    const message = error?.message || String(error || "unknown_error");
+    return `${code}${message}`;
 }
 
 async function syncCompletedMissionsFromLocal() {
